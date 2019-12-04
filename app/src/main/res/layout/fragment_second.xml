@@ -5,7 +5,7 @@
     android:layout_height="400dp"
     android:background="@color/colorAccent"
     android:orientation="vertical"
-    tools:context=".fragments.secondFragment">
+    tools:context=".fragments.SecondFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView

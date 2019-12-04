@@ -14,10 +14,10 @@ import com.example.fragmentation.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class secondFragment extends Fragment {
+public class SecondFragment extends Fragment {
 
 
-    public secondFragment() {
+    public SecondFragment() {
         // Required empty public constructor
     }
 
