@@ -10,12 +10,13 @@ import android.widget.Button;
 
 import com.example.fragmentation.fragments.FirstFragment;
 import com.example.fragmentation.fragments.SecondFragment;
+import com.example.fragmentation.fragments.ThirdFragment;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
 
     private Button btnFragment;
-    private Boolean status=true;
+    private String status="f1";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,18 +29,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         FragmentManager fragmentManager=getSupportFragmentManager();
         FragmentTransaction fragmentTransaction=fragmentManager.beginTransaction();
-        if (status)
+        if (status=="f1")
         {
             FirstFragment firstFragment=new FirstFragment();
-            //firstFragment.add(R.id.fragmentContainer,firstFragment);
+            fragmentTransaction.replace(R.id.fragmentContainer,firstFragment);
             fragmentTransaction.commit();
             btnFragment.setText("Load Second Fragment");
-            status=false;
+            status="f2";
+        }
+        else if(status=="f2")
+        {
+            SecondFragment secondFragment=new SecondFragment();
+            fragmentTransaction.replace(R.id.fragmentContainer,secondFragment);
+            fragmentTransaction.commit();
+            btnFragment.setText("Add Fragment");
+            status="f3";
+
         }
         else
         {
-            SecondFragment secondFragment=new SecondFragment();
-
+            ThirdFragment thirdFragment =new ThirdFragment();
+            fragmentTransaction.replace(R.id.fragmentContainer, thirdFragment);
+            fragmentTransaction.commit();
+            btnFragment.setText("Load First Fragment");
+            status="f1";
         }
     }
 }
