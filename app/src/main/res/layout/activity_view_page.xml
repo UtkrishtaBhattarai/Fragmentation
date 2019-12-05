@@ -8,13 +8,14 @@
     android:layout_height="match_parent"
     tools:context=".ViewPage">
 
+
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabid"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#1E88E5"
         app:tabIndicatorHeight="2dp"
-        app:tabTextColor="#FFFFFFF"/>
+        app:tabTextColor="#FFFFFF"/>
 
 
     <androidx.viewpager.widget.ViewPager
